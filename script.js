@@ -1,6 +1,7 @@
 var doc = document;
 
 var initTextarea = doc.querySelector( '#init' );
+var uploadInput = doc.querySelector('#upload');
 var resultTextarea = doc.querySelector( '#result' );
 var resultCssTextarea = doc.querySelector( '#result-css' );
 var resultDemo = doc.querySelector( '#demo' );
@@ -19,6 +20,19 @@ let externalQuotesValue = document.querySelector('.options__input:checked').valu
 let quotes = getQuotes();
 
 const buttonExample = document.querySelector('.button-example');
+
+
+// File Select Event
+
+uploadInput.onchange = function(event){
+    getFile = uploadInput;
+    if(getFile.files.length != 0 && getFile.files[0].type.match(/text.*/)) {
+        var reader = newFileReader();
+        reader.onload = function(e) {
+            getResults()
+        }
+    }
+}
 
 
 // Textarea Actions
