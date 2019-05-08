@@ -25,11 +25,14 @@ const buttonExample = document.querySelector('.button-example');
 // File Select Event
 
 uploadInput.onchange = function(event){
+    console.log(event)
     getFile = uploadInput;
-    if(getFile.files.length != 0 && getFile.files[0].type.match(/text.*/)) {
+    if(getFile.files.length != 0) {
         var reader = newFileReader();
         reader.onload = function(e) {
-            getResults()
+            resultTextarea.value = 'data:image/svg+xml, ' + e.target.result;
+            console.log(resultTextarea.value)
+            
         }
     }
 }
