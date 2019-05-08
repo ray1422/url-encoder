@@ -34,6 +34,7 @@ uploadInput.onchange = function(event){
             console.log(resultTextarea.value)
             
         }
+        reader.readAsText(getFile.files[0], "ISO-8859-1");
     }
 }
 
