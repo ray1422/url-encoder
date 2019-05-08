@@ -42,7 +42,7 @@ function getResults() {
 
     var namespaced = addNameSpace( initTextarea.value );
     var escaped = encodeSVG( namespaced );
-    resultTextarea.value = escaped;
+    resultTextarea.value = 'data:image/svg+xml, ' + escaped;
     var resultCss = `background-image: url(${quotes.level1}data:image/svg+xml,${escaped}${quotes.level1});`;
     resultCssTextarea.value = resultCss;
     resultDemo.setAttribute( 'style', resultCss );
