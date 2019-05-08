@@ -28,7 +28,7 @@ uploadInput.onchange = function(event){
     console.log(event)
     getFile = uploadInput;
     if(getFile.files.length != 0) {
-        var reader = newFileReader();
+        var reader = new FileReader();
         reader.onload = function(e) {
             resultTextarea.value = 'data:image/svg+xml, ' + e.target.result;
             console.log(resultTextarea.value)
