@@ -16,7 +16,7 @@ var demoContrastClass = 'demo-contrast-on';
 var symbols = /[\r\n%#()<>?\[\\\]^`{|}]/g;
 
 const quotesInputs = document.querySelectorAll('.options__input');
-let externalQuotesValue = document.querySelector('.options__input:checked').value;
+let externalQuotesValue = 'double';
 let quotes = getQuotes();
 
 const buttonExample = document.querySelector('.button-example');
