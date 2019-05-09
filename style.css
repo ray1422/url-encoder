@@ -1,6 +1,6 @@
 BODY {
   font: 16px/1.4 "Trebuchet MS", Arial, sans-serif;
-  color: green;
+  color: #0f0;
   background: black;
 }
 
@@ -34,12 +34,12 @@ TEXTAREA {
   }
 
 CODE {
-  padding: 0 3px;
-  background: #EEE;
   border-radius: 5px;
   text-shadow: 1px 1px 0 white;
   font: 14px/1.4 monospace;
-  color: #333;
+  background: #333;
+  color: #8f3;
+  padding: .6em;
   }
 
 CODE I {
