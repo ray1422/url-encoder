@@ -30,9 +30,7 @@ uploadInput.onchange = function(event){
     if(getFile.files.length != 0) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            resultTextarea.value = 'data:image/svg+xml, ' + encodeSVG(e.target.result);
-            console.log(resultTextarea.value)
-            
+            resultTextarea.value = 'data:image/svg+xml,' + encodeSVG(e.target.result);
         }
         reader.readAsText(getFile.files[0], "ISO-8859-1");
     }
