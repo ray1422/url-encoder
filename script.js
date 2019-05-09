@@ -37,17 +37,6 @@ uploadInput.onchange = function(event){
 }
 
 
-// Textarea Actions
-//----------------------------------------
-
-initTextarea.oninput = function() {
-    resultTextarea.value = encodeSVG(initTextarea.value);
-    getResults();
-};
-
-initTextarea.onkeyup = function() {
-    getResults();
-};
 
 function getResults() {
     if(!initTextarea.value) {
@@ -64,75 +53,6 @@ function getResults() {
     resultDemo.setAttribute( 'style', resultCss );
 }
 
-
-// Tabs Actions
-//----------------------------------------
-
-for (var i = 0; i < expanders.length; i++) {
-    var expander = expanders[i];
-
-    expander.onclick = function() {
-        var parent = this.parentNode;
-        var expanded = parent.querySelector( '.' + expandedClass );
-        expanded.classList.toggle( 'hidden' );
-        this.classList.toggle( 'opened' );
-    };
-}
-
-
-// Switch quotes
-//----------------------------------------
-
-quotesInputs.forEach(input => {
-    input.addEventListener('input', function () {
-        externalQuotesValue = this.value;
-        quotes = getQuotes();
-        getResults();
-    });
-});
-
-
-// Set example
-//----------------------------------------
-
-buttonExample.addEventListener('click', () => {
-    initTextarea.value = `<svg>
-  <circle r="50" cx="50" cy="50" fill="tomato"/>
-  <circle r="41" cx="47" cy="50" fill="orange"/>
-  <circle r="33" cx="48" cy="53" fill="gold"/>
-  <circle r="25" cx="49" cy="51" fill="yellowgreen"/>
-  <circle r="17" cx="52" cy="50" fill="lightseagreen"/>
-  <circle r="9" cx="55" cy="48" fill="teal"/>
-</svg>`;
-    getResults();
-})
-
-
-// Demo Background Switch
-//----------------------------------------
-
-function contrastButtonsSetCurrent(button) {
-    const classCurrent = 'contrast-button--current';
-
-    if (contrastButtonCurrent) {
-        contrastButtonCurrent.classList.remove(classCurrent);
-    }
-
-    backgroundColor = button.dataset.color;
-    contrastButtonCurrent = button;
-    button.classList.add(classCurrent);
-}
-
-contrastButtons.forEach(button => {
-    if (!backgroundColor) {
-        contrastButtonsSetCurrent(button);
-    }
-
-    button.addEventListener('click', function () {
-        contrastButtonsSetCurrent(this);
-        demoWrapper.style.background = backgroundColor;
-    });
-});
 
 
 // Namespace
