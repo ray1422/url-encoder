@@ -1,6 +1,7 @@
 BODY {
   font: 16px/1.4 "Trebuchet MS", Arial, sans-serif;
-  color: #000;
+  color: green;
+  background: black;
 }
 
 A {
@@ -233,19 +234,4 @@ DL , DD, DT{
     cursor: pointer;
     }
 
-  .contrast-button--current {
-    box-shadow: 0 0 0 3px steelblue;
-    }
-  .contrast-button:active {
-    box-shadow: 0 0 0 3px rgba(0,0,0,.25);
-    }
-
-  .contrast-button--white {
-    background: white;
-    }
-  .contrast-button--silver {
-    background: silver;
-    }
-  .contrast-button--black {
-    background: black;
-    }
+  
